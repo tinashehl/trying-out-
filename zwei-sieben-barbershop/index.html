@@ -1,0 +1,1872 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Zwei Sieben Barbershop Büttelborn – Premium Herrenhaarschnitte, Bartpflege & klassische Nassrasur. 4,9★ auf Google. Jetzt Termin vereinbaren.">
+  <meta name="keywords" content="Barbershop Büttelborn, Herrenfriseur Büttelborn, Haarschnitt Büttelborn, Bartpflege, Nassrasur, Friseur Darmstadt, Zwei Sieben">
+  <meta name="author" content="Zwei Sieben Barbershop">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Zwei Sieben Barbershop – Premium Barbershop in Büttelborn">
+  <meta property="og:description" content="Mehr als nur ein Haarschnitt. Handwerk, das man sieht. 4,9★ Google-Bewertung.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="de_DE">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://zweisinben-barbershop.de/">
+
+  <title>Zwei Sieben Barbershop | Premium Barbershop Büttelborn</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* =============================================
+       RESET & CUSTOM PROPERTIES
+    ============================================= */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --black:       #0a0a0a;
+      --dark:        #111111;
+      --card:        #161616;
+      --card-hover:  #1e1e1e;
+      --border:      #252525;
+      --gold:        #c9a96e;
+      --gold-light:  #e8c98a;
+      --gold-dim:    rgba(201,169,110,0.12);
+      --white:       #ffffff;
+      --grey:        #888888;
+      --muted:       #cccccc;
+
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-body:    'Inter', system-ui, sans-serif;
+
+      --ease:        cubic-bezier(0.4, 0, 0.2, 1);
+      --t-fast:      0.2s var(--ease);
+      --t-mid:       0.35s var(--ease);
+      --t-slow:      0.6s var(--ease);
+
+      --radius-sm:   4px;
+      --radius:      6px;
+      --shadow:      0 24px 60px rgba(0,0,0,0.6);
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: var(--font-body);
+      line-height: 1.6;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+    button { font-family: var(--font-body); }
+
+    /* =============================================
+       UTILITY
+    ============================================= */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .eyebrow {
+      display: block;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
+
+    .section-heading {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4.5vw, 3.2rem);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 18px;
+    }
+
+    .section-body {
+      font-size: 1rem;
+      color: var(--grey);
+      line-height: 1.8;
+      max-width: 520px;
+    }
+
+    .rule {
+      width: 44px;
+      height: 2px;
+      background: var(--gold);
+      margin-bottom: 22px;
+    }
+
+    /* Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 15px 30px;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      border-radius: var(--radius-sm);
+      transition: background var(--t-fast), color var(--t-fast), transform var(--t-fast), border-color var(--t-fast);
+    }
+
+    .btn-gold {
+      background: var(--gold);
+      color: var(--black);
+    }
+    .btn-gold:hover {
+      background: var(--gold-light);
+      transform: translateY(-2px);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      color: var(--white);
+      border: 1px solid rgba(255,255,255,0.25);
+    }
+    .btn-ghost:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+      transform: translateY(-2px);
+    }
+
+    /* =============================================
+       SCROLL REVEAL
+    ============================================= */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity var(--t-slow), transform var(--t-slow);
+    }
+    .reveal.in { opacity: 1; transform: none; }
+    .d1 { transition-delay: 0.1s; }
+    .d2 { transition-delay: 0.2s; }
+    .d3 { transition-delay: 0.3s; }
+    .d4 { transition-delay: 0.45s; }
+
+    /* =============================================
+       NAVIGATION
+    ============================================= */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 900;
+      padding: 22px 0;
+      transition: padding var(--t-mid), background var(--t-mid), border-color var(--t-mid);
+      border-bottom: 1px solid transparent;
+    }
+    .nav.stuck {
+      background: rgba(10,10,10,0.93);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      padding: 14px 0;
+      border-color: var(--border);
+    }
+
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+    }
+
+    .nav-logo {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      flex-shrink: 0;
+    }
+    .nav-logo em { font-style: normal; color: var(--gold); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 1px;
+      color: var(--muted);
+      position: relative;
+      transition: color var(--t-fast);
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -3px; left: 0;
+      width: 0; height: 1px;
+      background: var(--gold);
+      transition: width var(--t-fast);
+    }
+    .nav-links a:hover { color: var(--white); }
+    .nav-links a:hover::after { width: 100%; }
+
+    .nav-cta {
+      background: var(--gold);
+      color: var(--black);
+      padding: 10px 22px;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      border-radius: var(--radius-sm);
+      transition: background var(--t-fast);
+      flex-shrink: 0;
+    }
+    .nav-cta:hover { background: var(--gold-light); }
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 36px;
+      height: 36px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block;
+      height: 1.5px;
+      background: var(--white);
+      transition: transform var(--t-mid), opacity var(--t-mid);
+      transform-origin: center;
+    }
+    .hamburger.open span:nth-child(1) { transform: translateY(6.5px) rotate(45deg); }
+    .hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+    .hamburger.open span:nth-child(3) { transform: translateY(-6.5px) rotate(-45deg); }
+
+    /* Mobile drawer */
+    .drawer {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 800;
+      background: var(--black);
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 36px;
+    }
+    .drawer.open { display: flex; }
+    .drawer a {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 8vw, 3rem);
+      font-weight: 700;
+      transition: color var(--t-fast);
+    }
+    .drawer a:hover { color: var(--gold); }
+
+    /* =============================================
+       HERO
+    ============================================= */
+    .hero {
+      position: relative;
+      min-height: 100svh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    /* Layered dark background */
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 70% 40%, rgba(201,169,110,0.07) 0%, transparent 60%),
+                  linear-gradient(160deg, #0d0d0d 0%, #0a0a0a 100%);
+    }
+
+    /* Subtle grid */
+    .hero-grid {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(201,169,110,0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(201,169,110,0.025) 1px, transparent 1px);
+      background-size: 72px 72px;
+    }
+
+    /* Large decorative numeral */
+    .hero-numeral {
+      position: absolute;
+      right: -2%;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: var(--font-display);
+      font-size: clamp(200px, 28vw, 400px);
+      font-weight: 900;
+      line-height: 1;
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(201,169,110,0.06);
+      pointer-events: none;
+      user-select: none;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 130px 0 100px;
+    }
+
+    /* Pill badge */
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(201,169,110,0.08);
+      border: 1px solid rgba(201,169,110,0.18);
+      padding: 8px 18px;
+      border-radius: 100px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 36px;
+    }
+    .hero-pill .dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--gold);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(3.2rem, 9vw, 7.5rem);
+      font-weight: 900;
+      line-height: 0.92;
+      margin-bottom: 32px;
+    }
+    .hero-title .line-gold { color: var(--gold); display: block; }
+    .hero-title .line-ghost {
+      display: block;
+      color: transparent;
+      -webkit-text-stroke: 1px rgba(255,255,255,0.2);
+    }
+
+    .hero-sub {
+      font-size: 1.05rem;
+      color: var(--grey);
+      max-width: 460px;
+      line-height: 1.85;
+      margin-bottom: 44px;
+    }
+
+    .hero-ctas {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 72px;
+    }
+
+    .hero-tel {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--muted);
+      transition: color var(--t-fast);
+    }
+    .hero-tel:hover { color: var(--gold); }
+
+    /* Stat bar */
+    .hero-stats {
+      display: flex;
+      gap: 56px;
+      flex-wrap: wrap;
+      padding-top: 48px;
+      border-top: 1px solid var(--border);
+    }
+    .stat-val {
+      font-family: var(--font-display);
+      font-size: 2.4rem;
+      font-weight: 900;
+      color: var(--gold);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .stat-lbl {
+      font-size: 11px;
+      color: var(--grey);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+    }
+
+    /* =============================================
+       SERVICES
+    ============================================= */
+    .services {
+      padding: 120px 0;
+      background: var(--dark);
+    }
+
+    .services-head {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: end;
+      margin-bottom: 56px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+
+    .svc-card {
+      background: var(--card);
+      padding: 38px 30px;
+      position: relative;
+      overflow: hidden;
+      transition: background var(--t-mid), transform var(--t-mid);
+    }
+    .svc-card::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 2px;
+      background: var(--gold);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform var(--t-mid);
+    }
+    .svc-card:hover { background: var(--card-hover); }
+    .svc-card:hover::after { transform: scaleX(1); }
+
+    .svc-num {
+      position: absolute;
+      top: 20px; right: 20px;
+      font-family: var(--font-display);
+      font-size: 4rem;
+      font-weight: 900;
+      color: rgba(255,255,255,0.025);
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .svc-icon {
+      width: 40px; height: 40px;
+      margin-bottom: 22px;
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+
+    .svc-name {
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .svc-desc {
+      font-size: 0.875rem;
+      color: var(--grey);
+      line-height: 1.75;
+      margin-bottom: 22px;
+    }
+
+    .svc-price {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--gold);
+    }
+
+    /* =============================================
+       ABOUT
+    ============================================= */
+    .about {
+      padding: 120px 0;
+      background: var(--black);
+    }
+
+    .about-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 88px;
+      align-items: center;
+    }
+
+    .about-visual { position: relative; }
+
+    .about-frame {
+      position: relative;
+      background: var(--card);
+      border: 1px solid var(--border);
+      height: 520px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    .about-frame::before {
+      content: '';
+      position: absolute;
+      inset: 18px;
+      border: 1px solid rgba(201,169,110,0.1);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .about-logo-bg {
+      font-family: var(--font-display);
+      font-size: 7rem;
+      font-weight: 900;
+      color: rgba(201,169,110,0.06);
+      line-height: 1;
+      user-select: none;
+    }
+
+    /* Floating badge */
+    .about-badge {
+      position: absolute;
+      bottom: -28px; right: -28px;
+      background: var(--gold);
+      color: var(--black);
+      padding: 24px 28px;
+      text-align: center;
+      z-index: 2;
+    }
+    .about-badge .b-num {
+      font-family: var(--font-display);
+      font-size: 2.2rem;
+      font-weight: 900;
+      line-height: 1;
+    }
+    .about-badge .b-lbl {
+      font-size: 9px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    .about-text { }
+
+    .about-check {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 30px;
+    }
+    .about-check li {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      font-size: 0.925rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    .about-check li::before {
+      content: '✦';
+      color: var(--gold);
+      font-size: 9px;
+      margin-top: 5px;
+      flex-shrink: 0;
+    }
+
+    /* =============================================
+       PORTFOLIO
+    ============================================= */
+    .portfolio {
+      padding: 120px 0;
+      background: var(--dark);
+    }
+
+    .portfolio-head {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+    .portfolio-head .rule { margin: 0 auto 22px; }
+
+    .portfolio-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(2, 260px);
+      gap: 2px;
+    }
+
+    .pf-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+    .pf-item:first-child {
+      grid-row: span 2;
+    }
+
+    /* Placeholder gradient mimicking a photo */
+    .pf-item:nth-child(1) .pf-bg { background: linear-gradient(135deg, #1a1510 0%, #2a200e 100%); }
+    .pf-item:nth-child(2) .pf-bg { background: linear-gradient(135deg, #0f0f0f 0%, #1d1d1d 100%); }
+    .pf-item:nth-child(3) .pf-bg { background: linear-gradient(135deg, #12100d 0%, #1f1a12 100%); }
+    .pf-item:nth-child(4) .pf-bg { background: linear-gradient(135deg, #0e0e0e 0%, #1a1a1a 100%); }
+    .pf-item:nth-child(5) .pf-bg { background: linear-gradient(135deg, #141008 0%, #22190a 100%); }
+    .pf-item:nth-child(6) .pf-bg { background: linear-gradient(135deg, #111111 0%, #1c1c1c 100%); }
+    .pf-item:nth-child(7) .pf-bg { background: linear-gradient(135deg, #100e0a 0%, #1e1a11 100%); }
+
+    .pf-bg {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .pf-scissors {
+      font-size: 3.5rem;
+      opacity: 0.07;
+      filter: grayscale(1);
+    }
+
+    .pf-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(10,10,10,0.82);
+      display: flex;
+      align-items: flex-end;
+      padding: 22px;
+      opacity: 0;
+      transition: opacity var(--t-mid);
+    }
+    .pf-item:hover .pf-overlay { opacity: 1; }
+    .pf-tag {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .portfolio-note {
+      text-align: center;
+      margin-top: 32px;
+      font-size: 0.85rem;
+      color: var(--grey);
+    }
+    .portfolio-note a { color: var(--gold); border-bottom: 1px solid rgba(201,169,110,0.3); }
+
+    /* =============================================
+       TESTIMONIALS
+    ============================================= */
+    .testimonials {
+      padding: 120px 0;
+      background: var(--black);
+    }
+
+    .testi-head {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+    .testi-head .rule { margin: 0 auto 22px; }
+
+    .rating-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 14px;
+    }
+    .rating-stars { color: var(--gold); font-size: 18px; letter-spacing: 3px; }
+    .rating-meta { font-size: 0.875rem; color: var(--grey); }
+
+    .testi-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .testi-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      padding: 34px 28px;
+      transition: border-color var(--t-mid), transform var(--t-mid);
+    }
+    .testi-card:hover {
+      border-color: rgba(201,169,110,0.25);
+      transform: translateY(-4px);
+    }
+
+    .testi-q {
+      font-family: var(--font-display);
+      font-size: 3.5rem;
+      color: var(--gold);
+      opacity: 0.25;
+      line-height: 1;
+      margin-bottom: 14px;
+    }
+
+    .testi-text {
+      font-size: 0.925rem;
+      color: var(--muted);
+      line-height: 1.85;
+      margin-bottom: 28px;
+    }
+
+    .testi-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .author-av {
+      width: 42px; height: 42px;
+      border-radius: 50%;
+      background: var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+    .author-name { font-size: 0.875rem; font-weight: 600; }
+    .author-stars { font-size: 11px; color: var(--gold); margin-top: 2px; letter-spacing: 1px; }
+
+    /* =============================================
+       FAQ
+    ============================================= */
+    .faq {
+      padding: 120px 0;
+      background: var(--dark);
+    }
+
+    .faq-inner {
+      display: grid;
+      grid-template-columns: 5fr 7fr;
+      gap: 88px;
+      align-items: start;
+    }
+
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+
+    .faq-item {
+      background: var(--card);
+      border: 1px solid var(--border);
+      overflow: hidden;
+    }
+
+    .faq-q {
+      width: 100%;
+      background: none;
+      border: none;
+      color: var(--white);
+      padding: 22px 24px;
+      text-align: left;
+      font-size: 0.925rem;
+      font-weight: 500;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      transition: color var(--t-fast);
+    }
+    .faq-q:hover { color: var(--gold); }
+
+    .faq-plus {
+      flex-shrink: 0;
+      width: 22px; height: 22px;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      line-height: 1;
+      color: var(--gold);
+      transition: transform var(--t-mid), border-color var(--t-mid);
+    }
+    .faq-item.open .faq-plus {
+      transform: rotate(45deg);
+      border-color: var(--gold);
+    }
+
+    .faq-body {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s var(--ease);
+    }
+    .faq-item.open .faq-body { max-height: 300px; }
+
+    .faq-body-inner {
+      padding: 0 24px 22px;
+      font-size: 0.875rem;
+      color: var(--grey);
+      line-height: 1.85;
+    }
+
+    /* =============================================
+       CONTACT
+    ============================================= */
+    .contact {
+      padding: 120px 0;
+      background: var(--black);
+    }
+
+    .contact-intro {
+      text-align: center;
+      margin-bottom: 72px;
+    }
+    .contact-intro .rule { margin: 0 auto 22px; }
+    .contact-intro .section-body { margin: 0 auto; text-align: center; }
+
+    .contact-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: start;
+    }
+
+    /* Info blocks */
+    .cinfo-list {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .cinfo-item {
+      display: flex;
+      gap: 18px;
+      align-items: flex-start;
+    }
+
+    .cinfo-icon {
+      width: 46px; height: 46px;
+      background: var(--gold-dim);
+      border: 1px solid rgba(201,169,110,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--gold);
+      flex-shrink: 0;
+    }
+
+    .cinfo-label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--grey);
+      margin-bottom: 6px;
+    }
+
+    .cinfo-val {
+      font-size: 0.95rem;
+      color: var(--white);
+      line-height: 1.6;
+    }
+    .cinfo-val a:hover { color: var(--gold); }
+
+    /* Hours table */
+    .hours-table {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 8px;
+    }
+    .h-row {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.875rem;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+    .h-row:last-child { border-bottom: none; padding-bottom: 0; }
+    .h-day { color: var(--grey); }
+    .h-time { color: var(--white); }
+    .h-closed { color: var(--grey); }
+
+    /* Form */
+    .cf-form { }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .fg {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .fg label {
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--grey);
+    }
+
+    .fg input,
+    .fg select,
+    .fg textarea {
+      background: var(--card);
+      border: 1px solid var(--border);
+      color: var(--white);
+      padding: 14px 18px;
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      border-radius: var(--radius-sm);
+      transition: border-color var(--t-fast);
+      outline: none;
+      width: 100%;
+    }
+    .fg input:focus,
+    .fg select:focus,
+    .fg textarea:focus { border-color: var(--gold); }
+    .fg input::placeholder,
+    .fg textarea::placeholder { color: var(--grey); }
+    .fg select { cursor: pointer; }
+    .fg select option { background: var(--card); }
+    .fg textarea { resize: vertical; min-height: 110px; }
+
+    .form-send {
+      width: 100%;
+      justify-content: center;
+      padding: 17px;
+      margin-top: 6px;
+    }
+
+    .form-ok {
+      display: none;
+      margin-top: 18px;
+      padding: 18px;
+      border: 1px solid rgba(201,169,110,0.25);
+      border-radius: var(--radius);
+      color: var(--gold);
+      font-size: 0.9rem;
+      text-align: center;
+    }
+
+    /* =============================================
+       FOOTER
+    ============================================= */
+    .footer {
+      background: #050505;
+      border-top: 1px solid var(--border);
+      padding: 64px 0 32px;
+    }
+
+    .footer-body {
+      display: grid;
+      grid-template-columns: 2.2fr 1fr 1fr;
+      gap: 60px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 32px;
+    }
+
+    .footer-logo {
+      font-family: var(--font-display);
+      font-size: 26px;
+      font-weight: 900;
+      margin-bottom: 14px;
+    }
+    .footer-logo em { font-style: normal; color: var(--gold); }
+
+    .footer-desc {
+      font-size: 0.875rem;
+      color: var(--grey);
+      line-height: 1.85;
+      max-width: 300px;
+    }
+
+    .footer-col-title {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 18px;
+    }
+
+    .footer-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 11px;
+    }
+    .footer-list a {
+      font-size: 0.875rem;
+      color: var(--grey);
+      transition: color var(--t-fast);
+    }
+    .footer-list a:hover { color: var(--white); }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.8rem;
+      color: var(--grey);
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-legal {
+      display: flex;
+      gap: 20px;
+    }
+    .footer-legal a:hover { color: var(--white); }
+
+    /* =============================================
+       RESPONSIVE
+    ============================================= */
+    @media (max-width: 1024px) {
+      .services-grid { grid-template-columns: repeat(2, 1fr); }
+      .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+      }
+      .pf-item:first-child { grid-row: span 1; }
+      .footer-body { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+
+      .services-head { grid-template-columns: 1fr; gap: 20px; }
+      .services-grid { grid-template-columns: 1fr; }
+
+      .about-inner { grid-template-columns: 1fr; gap: 64px; }
+      .about-badge { right: 0; bottom: -16px; }
+
+      .testi-grid { grid-template-columns: 1fr; }
+
+      .faq-inner { grid-template-columns: 1fr; gap: 48px; }
+
+      .contact-inner { grid-template-columns: 1fr; gap: 48px; }
+      .form-row { grid-template-columns: 1fr; }
+
+      .footer-body { grid-template-columns: 1fr; gap: 36px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+
+      .hero-numeral { display: none; }
+      .hero-stats { gap: 32px; }
+    }
+
+    @media (max-width: 480px) {
+      .portfolio-grid { grid-template-columns: 1fr; }
+      .hero-ctas { flex-direction: column; align-items: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =========================================
+       NAVIGATION
+  ========================================= -->
+  <nav class="nav" id="nav" role="navigation" aria-label="Hauptnavigation">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="#home" class="nav-logo" aria-label="Zwei Sieben Barbershop – Startseite">
+          ZWEI<em>SIEBEN</em>
+        </a>
+
+        <ul class="nav-links" role="list">
+          <li><a href="#services">Leistungen</a></li>
+          <li><a href="#about">Über uns</a></li>
+          <li><a href="#portfolio">Arbeiten</a></li>
+          <li><a href="#testimonials">Bewertungen</a></li>
+          <li><a href="#contact">Kontakt</a></li>
+        </ul>
+
+        <a href="tel:+4961526672634" class="nav-cta">Termin buchen</a>
+
+        <button class="hamburger" id="hamburger" aria-label="Menü öffnen/schließen" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Drawer -->
+  <div class="drawer" id="drawer" role="dialog" aria-modal="true" aria-label="Mobilmenü">
+    <a href="#services" class="drawer-link">Leistungen</a>
+    <a href="#about" class="drawer-link">Über uns</a>
+    <a href="#portfolio" class="drawer-link">Arbeiten</a>
+    <a href="#testimonials" class="drawer-link">Bewertungen</a>
+    <a href="#contact" class="drawer-link">Kontakt</a>
+    <a href="tel:+4961526672634" class="btn btn-gold" style="margin-top: 12px;">
+      Jetzt anrufen
+    </a>
+  </div>
+
+  <!-- =========================================
+       HERO
+  ========================================= -->
+  <section class="hero" id="home" aria-label="Hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="hero-grid" aria-hidden="true"></div>
+    <div class="hero-numeral" aria-hidden="true">27</div>
+
+    <div class="container">
+      <div class="hero-content">
+
+        <div class="hero-pill reveal">
+          <span class="dot"></span>
+          Premium Barbershop · Büttelborn
+        </div>
+
+        <h1 class="hero-title reveal d1">
+          <span>Mehr als</span>
+          <span class="line-gold">nur ein</span>
+          <span class="line-ghost">Haarschnitt.</span>
+        </h1>
+
+        <p class="hero-sub reveal d2">
+          Handwerk, das man sieht. Präzision, die man fühlt.
+          Bei Zwei Sieben gibt es keine halben Sachen —
+          nur Ergebnisse, die für sich sprechen.
+        </p>
+
+        <div class="hero-ctas reveal d3">
+          <a href="tel:+4961526672634" class="btn btn-gold">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+              <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.1 1.18a2 2 0 012-2.18h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 6.27a16 16 0 006.29 6.29l.39-.39a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+            </svg>
+            Termin vereinbaren
+          </a>
+          <a href="#services" class="btn btn-ghost">
+            Leistungen ansehen
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </a>
+        </div>
+
+        <div class="hero-stats reveal d4" role="list" aria-label="Kennzahlen">
+          <div role="listitem">
+            <div class="stat-val">4,9★</div>
+            <div class="stat-lbl">Ø Google</div>
+          </div>
+          <div role="listitem">
+            <div class="stat-val">133+</div>
+            <div class="stat-lbl">Bewertungen</div>
+          </div>
+          <div role="listitem">
+            <div class="stat-val">27</div>
+            <div class="stat-lbl">Unser Name</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================
+       SERVICES
+  ========================================= -->
+  <section class="services" id="services" aria-labelledby="services-heading">
+    <div class="container">
+
+      <div class="services-head">
+        <div>
+          <span class="eyebrow reveal">Unsere Leistungen</span>
+          <div class="rule reveal"></div>
+          <h2 class="section-heading reveal" id="services-heading">Was wir für dich tun</h2>
+        </div>
+        <p class="section-body reveal">
+          Vom klassischen Herrenschnitt bis zur Hot-Towel-Nassrasur —
+          bei Zwei Sieben bekommst du das vollständige Barbershop-Erlebnis.
+        </p>
+      </div>
+
+      <div class="services-grid" role="list">
+
+        <!-- 01 -->
+        <article class="svc-card reveal" role="listitem">
+          <span class="svc-num" aria-hidden="true">01</span>
+          <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+            <path d="M6 3v18M6 3l6 3 6-3M6 21l6-3 6 3M12 6v12"/>
+          </svg>
+          <h3 class="svc-name">Männerhaarschnitt</h3>
+          <p class="svc-desc">
+            Klassisch oder modern — auf deine Kopfform und deinen Stil abgestimmt.
+            Präzisionsarbeit von der Stirn bis zum Nacken.
+          </p>
+          <span class="svc-price">ab 18 €</span>
+        </article>
+
+        <!-- 02 -->
+        <article class="svc-card reveal d1" role="listitem">
+          <span class="svc-num" aria-hidden="true">02</span>
+          <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 00-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0020 4.77 5.07 5.07 0 0019.91 1S18.73.65 16 2.48a13.38 13.38 0 00-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 005 4.77a5.44 5.44 0 00-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 009 18.13V22"/>
+          </svg>
+          <h3 class="svc-name">Bartpflege & Design</h3>
+          <p class="svc-desc">
+            Konturenscharf, clean, definiert. Dein Bart wird modelliert
+            und in Form gebracht — mit echtem Handwerk.
+          </p>
+          <span class="svc-price">ab 12 €</span>
+        </article>
+
+        <!-- 03 -->
+        <article class="svc-card reveal d2" role="listitem">
+          <span class="svc-num" aria-hidden="true">03</span>
+          <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+            <circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/>
+            <line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/>
+          </svg>
+          <h3 class="svc-name">Klassische Nassrasur</h3>
+          <p class="svc-desc">
+            Hot-Towel, warme Kompressen, Rasiermesser.
+            Das ultimative Rasur-Ritual für maximale Pflege und Glattheit.
+          </p>
+          <span class="svc-price">ab 20 €</span>
+        </article>
+
+        <!-- 04 -->
+        <article class="svc-card reveal d1" role="listitem">
+          <span class="svc-num" aria-hidden="true">04</span>
+          <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+            <path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/>
+          </svg>
+          <h3 class="svc-name">Kombi: Schnitt & Rasur</h3>
+          <p class="svc-desc">
+            Das komplette Paket in einer Session.
+            Haarschnitt und Nassrasur für den gepflegten Gesamtlook.
+          </p>
+          <span class="svc-price">ab 29 €</span>
+        </article>
+
+        <!-- 05 -->
+        <article class="svc-card reveal d2" role="listitem">
+          <span class="svc-num" aria-hidden="true">05</span>
+          <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+            <circle cx="12" cy="12" r="3"/>
+          </svg>
+          <h3 class="svc-name">Augenbrauenpflege</h3>
+          <p class="svc-desc">
+            Klare Linien, gepflegtes Erscheinungsbild.
+            Augenbrauenkorrektur für einen frischen, definierten Look.
+          </p>
+          <span class="svc-price">ab 6 €</span>
+        </article>
+
+        <!-- 06 -->
+        <article class="svc-card reveal d3" role="listitem">
+          <span class="svc-num" aria-hidden="true">06</span>
+          <svg class="svc-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" aria-hidden="true">
+            <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
+            <circle cx="9" cy="7" r="4"/>
+            <path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/>
+          </svg>
+          <h3 class="svc-name">Kinderfreundlich</h3>
+          <p class="svc-desc">
+            Auch die Kleinsten sind herzlich willkommen.
+            Entspannte Atmosphäre für Jungs jeden Alters.
+          </p>
+          <span class="svc-price">auf Anfrage</span>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================
+       ABOUT
+  ========================================= -->
+  <section class="about" id="about" aria-labelledby="about-heading">
+    <div class="container">
+      <div class="about-inner">
+
+        <!-- Visual -->
+        <div class="about-visual reveal">
+          <div class="about-frame">
+            <div class="about-logo-bg" aria-hidden="true">27</div>
+            <div class="about-badge" aria-label="Google Bewertung 4,9 Sterne">
+              <div class="b-num">4,9</div>
+              <div class="b-lbl">★ Google</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Content -->
+        <div class="about-text">
+          <span class="eyebrow reveal">Über uns</span>
+          <div class="rule reveal"></div>
+          <h2 class="section-heading reveal" id="about-heading">
+            Handwerk mit<br>echter Leidenschaft.
+          </h2>
+          <p class="section-body reveal">
+            Zwei Sieben ist mehr als ein Barbershop — es ist ein Ort, an dem
+            Handwerk, Atmosphäre und Stil zusammenkommen. Inhaber Apo und sein Team
+            schaffen ein Erlebnis, das Kunden immer wieder zurückbringt.
+          </p>
+
+          <ul class="about-check reveal" role="list">
+            <li>Einladende, professionelle Atmosphäre ab der ersten Sekunde</li>
+            <li>Inhaber Apo — bekannt für Talent, Sorgfalt und echte Aufmerksamkeit</li>
+            <li>Über 133 Google-Bewertungen mit 4,9 von 5 Sternen</li>
+            <li>Terminvereinbarung möglich — kein unnötiges Warten</li>
+            <li>Willkommen für alle Altersgruppen, Kinder inklusive</li>
+          </ul>
+
+          <div style="margin-top: 40px;" class="reveal">
+            <a href="tel:+4961526672634" class="btn btn-gold">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.1 1.18a2 2 0 012-2.18h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 6.27a16 16 0 006.29 6.29l.39-.39a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+              </svg>
+              Jetzt Termin buchen
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================
+       PORTFOLIO
+  ========================================= -->
+  <section class="portfolio" id="portfolio" aria-labelledby="portfolio-heading">
+    <div class="container">
+
+      <div class="portfolio-head">
+        <span class="eyebrow reveal">Portfolio</span>
+        <div class="rule reveal"></div>
+        <h2 class="section-heading reveal" id="portfolio-heading">Unsere Arbeit spricht für sich</h2>
+        <p class="section-body reveal" style="margin: 0 auto; text-align: center;">
+          Jeder Schnitt ist ein Unikat. Hier siehst du einen Querschnitt unserer Arbeit.
+        </p>
+      </div>
+
+      <div class="portfolio-grid" role="list" aria-label="Portfolio Galerie">
+        <div class="pf-item reveal" role="listitem">
+          <div class="pf-bg"><span class="pf-scissors" aria-hidden="true">✂</span></div>
+          <div class="pf-overlay"><span class="pf-tag">Skin Fade</span></div>
+        </div>
+        <div class="pf-item reveal d1" role="listitem">
+          <div class="pf-bg"><span class="pf-scissors" aria-hidden="true">✂</span></div>
+          <div class="pf-overlay"><span class="pf-tag">Bart Design</span></div>
+        </div>
+        <div class="pf-item reveal d2" role="listitem">
+          <div class="pf-bg"><span class="pf-scissors" aria-hidden="true">✂</span></div>
+          <div class="pf-overlay"><span class="pf-tag">Klassischer Schnitt</span></div>
+        </div>
+        <div class="pf-item reveal d3" role="listitem">
+          <div class="pf-bg"><span class="pf-scissors" aria-hidden="true">✂</span></div>
+          <div class="pf-overlay"><span class="pf-tag">Nassrasur</span></div>
+        </div>
+        <div class="pf-item reveal d1" role="listitem">
+          <div class="pf-bg"><span class="pf-scissors" aria-hidden="true">✂</span></div>
+          <div class="pf-overlay"><span class="pf-tag">Textured Cut</span></div>
+        </div>
+        <div class="pf-item reveal d2" role="listitem">
+          <div class="pf-bg"><span class="pf-scissors" aria-hidden="true">✂</span></div>
+          <div class="pf-overlay"><span class="pf-tag">Kombi Schnitt</span></div>
+        </div>
+        <div class="pf-item reveal d3" role="listitem">
+          <div class="pf-bg"><span class="pf-scissors" aria-hidden="true">✂</span></div>
+          <div class="pf-overlay"><span class="pf-tag">Fade & Bart</span></div>
+        </div>
+      </div>
+
+      <p class="portfolio-note reveal">
+        Aktuelle Arbeiten auf Instagram —
+        <a href="#contact">Kontaktiere uns für den Link</a>
+      </p>
+
+    </div>
+  </section>
+
+  <!-- =========================================
+       TESTIMONIALS
+  ========================================= -->
+  <section class="testimonials" id="testimonials" aria-labelledby="testi-heading">
+    <div class="container">
+
+      <div class="testi-head">
+        <span class="eyebrow reveal">Bewertungen</span>
+        <div class="rule reveal"></div>
+        <h2 class="section-heading reveal" id="testi-heading">Was unsere Kunden sagen</h2>
+        <div class="rating-row reveal" aria-label="Durchschnittsbewertung 4,9 von 5 Sternen">
+          <span class="rating-stars" aria-hidden="true">★★★★★</span>
+          <span class="rating-meta">4,9 von 5 · 133+ Google-Bewertungen</span>
+        </div>
+      </div>
+
+      <div class="testi-grid" role="list">
+
+        <article class="testi-card reveal" role="listitem">
+          <div class="testi-q" aria-hidden="true">"</div>
+          <p class="testi-text">
+            Mein Haarschnitt ist genau so geworden, wie ich es wollte.
+            Die Mitarbeiter sind sehr fürsorglich und professionell.
+            Werde definitiv wiederkommen!
+          </p>
+          <footer class="testi-author">
+            <div class="author-av" aria-hidden="true">M</div>
+            <div>
+              <div class="author-name">Marco R.</div>
+              <div class="author-stars" aria-label="5 Sterne">★★★★★</div>
+            </div>
+          </footer>
+        </article>
+
+        <article class="testi-card reveal d1" role="listitem">
+          <div class="testi-q" aria-hidden="true">"</div>
+          <p class="testi-text">
+            Beim Bartdesign kann ich diesen Salon nur empfehlen.
+            Apo weiß genau, was er tut — echte Handwerkskunst zu einem fairen Preis.
+          </p>
+          <footer class="testi-author">
+            <div class="author-av" aria-hidden="true">S</div>
+            <div>
+              <div class="author-name">Stefan K.</div>
+              <div class="author-stars" aria-label="5 Sterne">★★★★★</div>
+            </div>
+          </footer>
+        </article>
+
+        <article class="testi-card reveal d2" role="listitem">
+          <div class="testi-q" aria-hidden="true">"</div>
+          <p class="testi-text">
+            Die Atmosphäre ist sehr entspannt und modern. Man fühlt sich wie ein VIP.
+            Beste Adresse für Männerpflege in der Region.
+          </p>
+          <footer class="testi-author">
+            <div class="author-av" aria-hidden="true">T</div>
+            <div>
+              <div class="author-name">Tobias H.</div>
+              <div class="author-stars" aria-label="5 Sterne">★★★★★</div>
+            </div>
+          </footer>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================
+       FAQ
+  ========================================= -->
+  <section class="faq" id="faq" aria-labelledby="faq-heading">
+    <div class="container">
+      <div class="faq-inner">
+
+        <div>
+          <span class="eyebrow reveal">FAQ</span>
+          <div class="rule reveal"></div>
+          <h2 class="section-heading reveal" id="faq-heading">Häufige Fragen</h2>
+          <p class="section-body reveal">
+            Alles was du wissen möchtest — kurz und klar.
+            Weitere Fragen beantwortet Apo gerne persönlich.
+          </p>
+          <div style="margin-top: 36px;" class="reveal">
+            <a href="tel:+4961526672634" class="btn btn-ghost">Direkt anrufen</a>
+          </div>
+        </div>
+
+        <div class="faq-list" role="list">
+
+          <div class="faq-item reveal" role="listitem">
+            <button class="faq-q" aria-expanded="false">
+              Brauche ich einen Termin?
+              <span class="faq-plus" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-body" role="region">
+              <div class="faq-body-inner">
+                Eine Terminvereinbarung ist möglich und empfehlenswert,
+                damit du keine Zeit beim Warten verlierst.
+                Ruf uns einfach an — wir finden einen passenden Slot.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item reveal d1" role="listitem">
+            <button class="faq-q" aria-expanded="false">
+              Was kostet ein Haarschnitt?
+              <span class="faq-plus" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-body" role="region">
+              <div class="faq-body-inner">
+                Ein Haarschnitt beginnt ab 18 €. Das Kombiangebot Haarschnitt + Nassrasur
+                liegt bei ca. 29 €. Genaue Preise teilen wir gerne persönlich mit.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item reveal d2" role="listitem">
+            <button class="faq-q" aria-expanded="false">
+              Schneidet ihr auch Kinderhaare?
+              <span class="faq-plus" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-body" role="region">
+              <div class="faq-body-inner">
+                Ja! Kinder sind herzlich willkommen. Wir schaffen eine entspannte
+                Atmosphäre, damit auch der Nachwuchs sorglos seinen Schnitt bekommt.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item reveal d1" role="listitem">
+            <button class="faq-q" aria-expanded="false">
+              Was ist eine klassische Nassrasur?
+              <span class="faq-plus" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-body" role="region">
+              <div class="faq-body-inner">
+                Warme Kompressen öffnen die Poren, dann folgt die Rasur mit dem Messer
+                und eine beruhigende Pflege für die Haut — das ultimative Rasur-Erlebnis.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item reveal d2" role="listitem">
+            <button class="faq-q" aria-expanded="false">
+              Ist der Laden barrierefrei?
+              <span class="faq-plus" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-body" role="region">
+              <div class="faq-body-inner">
+                Leider ist der Salon aktuell nicht vollständig barrierefrei zugänglich.
+                Bei besonderen Bedürfnissen kontaktiere uns bitte im Voraus — wir helfen gerne.
+              </div>
+            </div>
+          </div>
+
+          <div class="faq-item reveal d3" role="listitem">
+            <button class="faq-q" aria-expanded="false">
+              Welche Zahlungsmethoden akzeptiert ihr?
+              <span class="faq-plus" aria-hidden="true">+</span>
+            </button>
+            <div class="faq-body" role="region">
+              <div class="faq-body-inner">
+                Bitte frage uns direkt bei deinem Besuch oder per Telefon nach den
+                akzeptierten Zahlungsmethoden — wir helfen dir gerne weiter.
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================
+       CONTACT
+  ========================================= -->
+  <section class="contact" id="contact" aria-labelledby="contact-heading">
+    <div class="container">
+
+      <div class="contact-intro">
+        <span class="eyebrow reveal">Kontakt</span>
+        <div class="rule reveal"></div>
+        <h2 class="section-heading reveal" id="contact-heading">Komm einfach vorbei</h2>
+        <p class="section-body reveal">
+          Ruf an, schreib uns oder besuch uns direkt in Büttelborn.
+          Wir freuen uns auf dich.
+        </p>
+      </div>
+
+      <div class="contact-inner">
+
+        <!-- Info -->
+        <div class="cinfo-list" role="list">
+
+          <div class="cinfo-item reveal" role="listitem">
+            <div class="cinfo-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/>
+              </svg>
+            </div>
+            <div>
+              <div class="cinfo-label">Adresse</div>
+              <div class="cinfo-val">
+                Mainzer Str. 63<br>
+                64572 Büttelborn<br>
+                Deutschland
+              </div>
+            </div>
+          </div>
+
+          <div class="cinfo-item reveal d1" role="listitem">
+            <div class="cinfo-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 9.81 19.79 19.79 0 01.1 1.18a2 2 0 012-2.18h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.91 6.27a16 16 0 006.29 6.29l.39-.39a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+              </svg>
+            </div>
+            <div>
+              <div class="cinfo-label">Telefon</div>
+              <div class="cinfo-val">
+                <a href="tel:+4961526672634">06152 6672634</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="cinfo-item reveal d2" role="listitem">
+            <div class="cinfo-icon" aria-hidden="true">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+              </svg>
+            </div>
+            <div>
+              <div class="cinfo-label">Öffnungszeiten</div>
+              <div class="cinfo-val">
+                <div class="hours-table" role="table" aria-label="Öffnungszeiten">
+                  <div class="h-row" role="row">
+                    <span class="h-day" role="cell">Montag</span>
+                    <span class="h-time" role="cell">10:00 – 18:30 Uhr</span>
+                  </div>
+                  <div class="h-row" role="row">
+                    <span class="h-day" role="cell">Di – Fr</span>
+                    <span class="h-time" role="cell">09:00 – 18:30 Uhr</span>
+                  </div>
+                  <div class="h-row" role="row">
+                    <span class="h-day" role="cell">Samstag</span>
+                    <span class="h-time" role="cell">09:00 – 17:00 Uhr</span>
+                  </div>
+                  <div class="h-row" role="row">
+                    <span class="h-day" role="cell">Sonntag</span>
+                    <span class="h-closed" role="cell">Geschlossen</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Form -->
+        <div class="cf-form reveal" id="formWrap">
+          <form id="contactForm" novalidate>
+            <div class="form-row">
+              <div class="fg">
+                <label for="cf-name">Name</label>
+                <input type="text" id="cf-name" name="name" placeholder="Dein Name" required autocomplete="name">
+              </div>
+              <div class="fg">
+                <label for="cf-phone">Telefon</label>
+                <input type="tel" id="cf-phone" name="phone" placeholder="Deine Nummer" autocomplete="tel">
+              </div>
+            </div>
+            <div class="fg">
+              <label for="cf-email">E-Mail</label>
+              <input type="email" id="cf-email" name="email" placeholder="deine@email.de" autocomplete="email">
+            </div>
+            <div class="fg">
+              <label for="cf-service">Gewünschte Leistung</label>
+              <select id="cf-service" name="service">
+                <option value="" disabled selected>Bitte wählen…</option>
+                <option>Männerhaarschnitt</option>
+                <option>Bartpflege & Design</option>
+                <option>Klassische Nassrasur</option>
+                <option>Kombi: Schnitt & Rasur</option>
+                <option>Augenbrauenpflege</option>
+                <option>Kinderhaarschnitt</option>
+                <option>Sonstiges</option>
+              </select>
+            </div>
+            <div class="fg">
+              <label for="cf-msg">Nachricht (optional)</label>
+              <textarea id="cf-msg" name="message" placeholder="Wunsch-Termin oder kurze Notiz…"></textarea>
+            </div>
+            <button type="submit" class="btn btn-gold form-send">
+              Nachricht senden
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true">
+                <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
+              </svg>
+            </button>
+          </form>
+          <div class="form-ok" id="formOk" role="alert" aria-live="polite">
+            ✦ Danke! Wir melden uns so schnell wie möglich bei dir.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================
+       FOOTER
+  ========================================= -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+
+      <div class="footer-body">
+
+        <div>
+          <div class="footer-logo">ZWEI<em>SIEBEN</em></div>
+          <p class="footer-desc">
+            Premium Barbershop in Büttelborn. Herrenhaarschnitte, Bartpflege
+            und klassische Nassrasur auf höchstem handwerklichem Niveau.
+          </p>
+        </div>
+
+        <nav aria-label="Footer Navigation">
+          <div class="footer-col-title">Navigation</div>
+          <ul class="footer-list" role="list">
+            <li><a href="#services">Leistungen</a></li>
+            <li><a href="#about">Über uns</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#testimonials">Bewertungen</a></li>
+            <li><a href="#contact">Kontakt</a></li>
+          </ul>
+        </nav>
+
+        <div>
+          <div class="footer-col-title">Kontakt</div>
+          <ul class="footer-list" role="list">
+            <li><a href="tel:+4961526672634">06152 6672634</a></li>
+            <li>Mainzer Str. 63</li>
+            <li>64572 Büttelborn</li>
+            <li style="margin-top: 10px; color: var(--grey); font-size: 0.8rem;">Mo 10–18:30 · Di–Fr 09–18:30</li>
+            <li style="color: var(--grey); font-size: 0.8rem;">Sa 09–17:00 · So Ruhetag</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <span>© 2025 Zwei Sieben Barbershop. Alle Rechte vorbehalten.</span>
+        <div class="footer-legal">
+          <a href="#">Impressum</a>
+          <a href="#">Datenschutz</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- =========================================
+       JAVASCRIPT
+  ========================================= -->
+  <script>
+    // ── Nav scroll state ──────────────────────────────────────
+    const nav = document.getElementById('nav');
+    const onScroll = () => nav.classList.toggle('stuck', window.scrollY > 60);
+    window.addEventListener('scroll', onScroll, { passive: true });
+
+    // ── Mobile drawer ─────────────────────────────────────────
+    const hamburger = document.getElementById('hamburger');
+    const drawer    = document.getElementById('drawer');
+
+    function closeDrawer() {
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      drawer.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    hamburger.addEventListener('click', () => {
+      const isOpen = drawer.classList.toggle('open');
+      hamburger.classList.toggle('open', isOpen);
+      hamburger.setAttribute('aria-expanded', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+
+    document.querySelectorAll('.drawer-link, .drawer .btn').forEach(el => {
+      el.addEventListener('click', closeDrawer);
+    });
+
+    document.addEventListener('keydown', e => {
+      if (e.key === 'Escape') closeDrawer();
+    });
+
+    // ── Scroll reveal ─────────────────────────────────────────
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in');
+          io.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -48px 0px' });
+
+    document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+    // Hero fires immediately on load
+    window.addEventListener('load', () => {
+      document.querySelectorAll('.hero .reveal').forEach(el => el.classList.add('in'));
+    });
+
+    // ── FAQ accordion ─────────────────────────────────────────
+    document.querySelectorAll('.faq-q').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item   = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => {
+          i.classList.remove('open');
+          i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+        });
+        if (!isOpen) {
+          item.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    // ── Contact form ──────────────────────────────────────────
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      this.style.display = 'none';
+      document.getElementById('formOk').style.display = 'block';
+    });
+
+    // ── Smooth anchor scroll (Safari fallback) ────────────────
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', function(e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
